@@ -36,3 +36,15 @@ fs.writeFile("./hello.html", "<h1>Hello world</h1>", (err, data) => {
   if (err) console.log(err);
   else console.log(data);
 });
+
+//we can not write in json file normally so we will stringify it
+let json = JSON.stringify({
+  name: "kanchan",
+  class: "G - 10",
+  college: "Chitkara",
+});
+
+fs.writeFile("./data.json", json, (err) => {
+  if (err) console.log(err);
+  else console.log("file created and data addded");
+});
