@@ -18,3 +18,5 @@ export function sub(x, y) {
 
 // 4. export default sub;
 //we can only export and import one module as default
+
+// to use module  import export we have to write "type": "module", in package.json

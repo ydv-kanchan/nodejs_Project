@@ -1,7 +1,7 @@
 //what are modules : modules are used to access functions from different js file in another file
 //types of modules: user defined, predefined,  third-party module: comes from npm package
 
-// const { Add, Sub } = require("./math.js"); //initialise
+//const { Add, Sub } = require("./math.js"); //initialise
 //to destrucure 'add' we will use { } curly BroadcastChannel
 
 //2.
@@ -16,4 +16,23 @@ import fs from "fs"; //used for file handling
 
 fs.open("./file.txt", (err) => {
   if (err) console.log("Error");
+  else console.log("File successfully opened");
+});
+
+// if file do not exist then it will give error
+// utf -8 is used for :
+// callback function is used with two arguments err and data
+fs.readFile("./file.txt", "utf-8", (err, data) => {
+  if (err) console.log(err);
+  else console.log(data);
+});
+
+fs.writeFile("./file.txt", "i am good today.", (err, data) => {
+  if (err) console.log(err);
+  else console.log("file written succressfully");
+});
+
+fs.writeFile("./hello.html", "<h1>Hello world</h1>", (err, data) => {
+  if (err) console.log(err);
+  else console.log(data);
 });
