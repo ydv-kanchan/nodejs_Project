@@ -48,3 +48,25 @@ fs.writeFile("./data.json", json, (err) => {
   if (err) console.log(err);
   else console.log("file created and data addded");
 });
+
+//we have to usee parse because the readFile method only reads string
+fs.readFile("./data.json", (err, data) => {
+  if (err) console.log(err);
+  else {
+    let obj = JSON.parse(data); //to convert back to json objects not strings
+    console.log(data.name);
+  }
+});
+
+// //rename file
+// fs.rename("./file.txt", "file1.txt", (err) => {
+//   if (err) throw err;
+//   console.log("renaming complere");
+// });
+
+//can be only run once, next time it will print error because file name we have to change is already done
+
+fs.rm("./file2.txt", (err) => {
+  if (err) console.log(err);
+  else console.log("successfully  removed");
+});
